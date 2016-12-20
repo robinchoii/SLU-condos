@@ -21736,9 +21736,33 @@
 
 /***/ },
 /* 183 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	
+	var React = __webpack_require__(1);
+	// var CondosContainer = require('./CondosContainer');
+
+
+	var App = React.createClass({
+	  displayName: 'App',
+
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'div',
+	        { className: 'col-md-6 col-md-offset-3' },
+	        React.createElement(
+	          'h1',
+	          { className: 'text-primary' },
+	          'South Lake Union Condos'
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = App;
 
 /***/ }
 /******/ ]);
