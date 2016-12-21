@@ -5,9 +5,7 @@ var CondoList = React.createClass({
   render: function() {
     return (
         <div className="col-md-4">
-          <div className='condo'>
-            <img className='condo img-responsive img-thumbnail' src={"app/images/Condo1/" + this.props.condo.picture} />
-          </div>
+          <img className='condo img-responsive img-thumbnail' src={"app/images/Condo1/" + this.props.condo.picture} />
           <div >
             <p>Bedroom: {this.props.condo.bedroom}</p>
             <p>Bath: {this.props.condo.price}</p>
