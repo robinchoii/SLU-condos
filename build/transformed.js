@@ -21739,8 +21739,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
-	// var CondosContainer = require('./CondosContainer');
-
+	var CondosContainer = __webpack_require__(184);
 
 	var App = React.createClass({
 	  displayName: 'App',
@@ -21763,6 +21762,139 @@
 	});
 
 	module.exports = App;
+
+/***/ },
+/* 184 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	var ReactDOM = __webpack_require__(32);
+	var condos = __webpack_require__(185);
+	var CondoList = __webpack_require__(186);
+
+	var CondosContainer = React.createClass({
+	  displayName: 'CondosContainer',
+
+	  render: function () {
+	    var condo = condos.map(function (condo) {
+	      return React.createElement(CondoList, { key: condo.id, condo: condo });
+	    });
+
+	    return React.createElement(
+	      'div',
+	      { className: 'col-md-12' },
+	      condo
+	    );
+	  }
+	});
+
+	ReactDOM.render(React.createElement(CondosContainer, null), document.getElementById('condoList'));
+
+/***/ },
+/* 185 */
+/***/ function(module, exports) {
+
+	var condos = [{
+	  id: 1,
+	  picture: '2419_8th_Ave_N_3011.jpg',
+	  sqft: '750',
+	  bedroom: '2',
+	  bathroom: '1',
+	  price: '55000'
+	}, {
+	  id: 2,
+	  picture: '2419_8th_Ave_N_3012.jpg',
+	  sqft: '750',
+	  bedroom: '2',
+	  bathroom: '1',
+	  price: '55000'
+	}, {
+	  id: 3,
+	  picture: '2419_8th_Ave_N_3012.jpg',
+	  sqft: '750',
+	  bedroom: '2',
+	  bathroom: '1',
+	  price: '55000'
+	}, {
+	  id: 4,
+	  picture: '2419_8th_Ave_N_3012.jpg',
+	  sqft: '750',
+	  bedroom: '2',
+	  bathroom: '1',
+	  price: '55000'
+	}, {
+	  id: 5,
+	  picture: '2419_8th_Ave_N_3012.jpg',
+	  sqft: '750',
+	  bedroom: '2',
+	  bathroom: '1',
+	  price: '55000'
+	}, {
+	  id: 6,
+	  picture: '2419_8th_Ave_N_3012.jpg',
+	  sqft: '750',
+	  bedroom: '2',
+	  bathroom: '1',
+	  price: '55000'
+	}, {
+	  id: 7,
+	  picture: '2419_8th_Ave_N_3012.jpg',
+	  sqft: '750',
+	  bedroom: '2',
+	  bathroom: '1',
+	  price: '55000'
+	}];
+
+	module.exports = condos;
+
+/***/ },
+/* 186 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	var ReactDOM = __webpack_require__(32);
+
+	var CondoList = React.createClass({
+	  displayName: 'CondoList',
+
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      { className: 'col-md-4' },
+	      React.createElement('img', { className: 'condo img-responsive img-thumbnail', src: "app/images/Condo1/" + this.props.condo.picture }),
+	      React.createElement(
+	        'div',
+	        null,
+	        React.createElement(
+	          'p',
+	          null,
+	          'Bedroom: ',
+	          this.props.condo.bedroom
+	        ),
+	        React.createElement(
+	          'p',
+	          null,
+	          'Bath: ',
+	          this.props.condo.price
+	        ),
+	        React.createElement(
+	          'p',
+	          null,
+	          'Squarefoot: ',
+	          this.props.condo.price
+	        ),
+	        React.createElement(
+	          'p',
+	          null,
+	          'Price: ',
+	          this.props.condo.price
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = CondoList;
 
 /***/ }
 /******/ ]);
